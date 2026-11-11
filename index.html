@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MusicPlayer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="player">
+    <header>
+      <h1>🎧 MusicPlayer</h1>
+      <span>Мой плеер</span>
+    </header>
+
+    <div class="content">
+
+      <section class="now-playing">
+        <div class="cover" id="cover">🎵</div>
+
+        <h2 class="song-title" id="title">Выбери песню</h2>
+        <p class="artist" id="artist">Неизвестный исполнитель</p>
+
+        <div class="progress-container">
+          <input
+            type="range"
+            id="progress"
+            min="0"
+            max="100"
+            value="0"
+          >
+
+          <div class="time">
+            <span id="currentTime">0:00</span>
+            <span id="duration">0:00</span>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button onclick="previousSong()">⏮</button>
+          <button class="play" id="playButton" onclick="togglePlay()">▶</button>
+          <button onclick="nextSong()">⏭</button>
+        </div>
+
+        <div class="volume">
+          <span>🔊</span>
+          <input
+            type="range"
+            id="volume"
+            min="0"
+            max="1"
+            step="0.01"
+            value="0.7"
+          >
+        </div>
+
+        <label class="upload" for="fileInput">
+          ➕ Добавить свои песни
+        </label>
+
+        <input
+          type="file"
+          id="fileInput"
+          accept="audio/*"
+          multiple
+        >
+      </section>
+
+      <section class="playlist">
+        <h2>📀 Плейлист</h2>
+        <div id="playlist"></div>
+      </section>
+
+    </div>
+  </div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
